@@ -5,12 +5,13 @@ using UnityEngine.Networking;
 
 public class DownloadImage : MonoBehaviour
 {
-    public Image targetImage;
+    public Image[] targetImage;
     public string imageUrl = "https://example.com/your-image.png";
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(DownloadAndSetImage());
+        if(Input.GetKeyDown(KeyCode.Space))
+            StartCoroutine(DownloadAndSetImage());
     }
 
     IEnumerator DownloadAndSetImage()
@@ -21,7 +22,12 @@ public class DownloadImage : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            targetImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+
+            for(int i = 0; i < targetImage.Length; i++)
+            {
+                targetImage[i].sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+
+            }
         }
         else
         {
