@@ -20,6 +20,7 @@ Welcome to lab 1 of the online games and networks course. In this exercise we ha
 
 ### Controls
 - SPACE: Load the image
+- WASD: Move
 
 
 
