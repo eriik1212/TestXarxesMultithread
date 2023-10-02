@@ -2,6 +2,8 @@
 
 Welcome to lab 1 of the online games and networks course. In this exercise we have made a script in which there is an object in constant movement. When you press the "SPACE" key the program will load an image.
 
+Github Link: https://github.com/eriik1212/TestXarxesMultithread
+
 # Creators
 
 - David Boces 
